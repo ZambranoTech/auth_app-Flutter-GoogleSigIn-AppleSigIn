@@ -1,16 +1,17 @@
 name: auth_app
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.2.3 <4.0.0'
+  sdk: ">=3.2.3 <4.0.0"
 
 dependencies:
   change_app_package_name: ^1.1.0
   dio: ^5.4.0
   flutter:
     sdk: flutter
+  flutter_dotenv: ^5.1.0
   font_awesome_flutter: ^10.6.0
   google_sign_in: ^6.2.1
 
@@ -21,3 +22,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+   - .env

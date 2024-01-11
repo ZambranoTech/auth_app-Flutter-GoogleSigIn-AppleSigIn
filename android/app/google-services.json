@@ -37,6 +37,13 @@
             {
               "client_id": "649940565348-6kgcrd1ji76u82fpkto7jb60davdu0ma.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "649940565348-0a9le6e2um23s5odumtiljvbnbha1br6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.javiergarcia.flutterauthapp"
+              }
             }
           ]
         }

@@ -1,7 +1,10 @@
+import 'package:auth_app/config/constants/environment.dart';
+import 'package:auth_app/shared/infrastructure/services/google_sigin_service.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 void main() {
+  Environment.initEnvironment();
   runApp(const MainApp());
 }
 
@@ -18,7 +21,7 @@ class MainApp extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () {
-
+                GoogleSignInService.signOut();
               }, 
               icon: const Icon(FontAwesomeIcons.doorOpen)
             )
@@ -35,7 +38,7 @@ class MainApp extends StatelessWidget {
                 splashColor: Colors.transparent,
                 shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(10) ),
                 onPressed: () {
-                  //TODO: Sig in with Google
+                  GoogleSignInService.signInWithGoogle();
                 },    
                 color: Colors.red,
                 child: const Row(
