@@ -1,7 +1,9 @@
 import 'package:auth_app/config/constants/environment.dart';
+import 'package:auth_app/shared/infrastructure/services/apple_sigin_service.dart';
 import 'package:auth_app/shared/infrastructure/services/google_sigin_service.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 void main() {
   Environment.initEnvironment();
@@ -37,19 +39,22 @@ class MainApp extends StatelessWidget {
                 minWidth: double.infinity,
                 splashColor: Colors.transparent,
                 shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(10) ),
-                onPressed: () {
-                  GoogleSignInService.signInWithGoogle();
-                },    
+                onPressed: GoogleSignInService.signInWithGoogle,    
                 color: Colors.red,
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(FontAwesomeIcons.google, color: Colors.white,),
                     SizedBox(width: 10,),
-                    Text('Sign in with Google', style: TextStyle(color: Colors.white),),
+                    Text('Sign in with Google', style: TextStyle(color: Colors.white, fontSize: 18),),
                   ],
                 )
+              ),
+
+              const SignInWithAppleButton(
+                onPressed: AppleSignInService.sigIn,
               )
+
 
             ],
           ),
